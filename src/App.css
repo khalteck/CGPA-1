@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+header {
+  height: 50vh;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  width: 100%;
+  color: white;
+  padding-bottom: 120px;
+}
+header h1 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2.7rem;
+}
+header p {
+  width: 15rem;
+  line-height: 1.3em;
+  font-weight: 400;
+}
+main {
+  background-color: #ffffff;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: 15em;
+  padding: 2.5em;
+  border-radius: 2em;
+}
+main h1 {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+main p {
+  font-size: 1rem;
+  margin: 1em 0 0.5em 0;
+  color: #7c7a7a;
+}
+main .wrapper {
+  text-align: right;
+  margin-bottom: 3em;
+}
+main .wrapper h3 {
+  text-transform: uppercase;
+  margin: 1.2em 0;
+  color: #1e1e1e;
+}
+main .wrapper button {
+  background-color: #0085ff;
+  border: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.1em;
+  padding: 0.5em 1.5em;
+  border-radius: 0.3em;
+}
+main .wrapper button:hover {
+  background-color: #7c7a7a;
+}
+main .wrapper .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.addCourse {
+  height: fit-content;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: #0085ff;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+}
+.addCourse:hover {
+  background-color: gray;
+}
+.course_info {
+  margin-bottom: 1em;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.course_info input {
+  width: 20%;
+  border: 1px solid #7c7a7a;
+  font-size: 1em;
+  text-transform: capitalize;
+  height: 3.3em;
+  border-radius: 0.4em;
+  width: 40%;
+  outline: none;
+}
+.course_info select {
+  width: 20%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 0;
+  outline: 1px solid #7c7a7a;
+  font-size: 1em;
+  border-radius: 0.4em;
+  text-transform: capitalize;
+  border-right: 10px solid transparent;
+}
+.course_info .credits,
+.course_info .gradeOption {
+  width: 5em;
+  color: #7c7a7a;
+  height: 3.3em;
+  width: 35%;
+  padding: 1em 1em;
+}
+.course_info .gradeOption {
+  width: 7em;
+}
+/* .course_info i {
+  border: 1px solid #7c7a7a;
+  border-radius: 50%;
+  padding: 0.3em;
+  color: #7c7a7a;
+  font-size: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: -2.7em;
+} */
+.close-cont {
+  /* width: 32px;
+  height: 32px; */
+  padding: 8px;
+  border: 1px solid gray;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.close-cont > img {
+  width: 18px;
+  height: 18px;
+}
+@media screen and (max-width: 500px) {
+  form {
+    width: 95%;
+    padding-right: 3em !important;
+    max-width: 900px;
+  }
+  .gradeOption,
+  .credits {
+    margin-left: 0.3em;
+  }
+  input {
+    padding: 0 1em 0 0.5em;
+  }
+  button {
+    padding: 0.5em 1em !important;
+  }
+}
+@media screen and (min-width: 500.99px) {
+  form {
+    width: 80% !important;
+    max-width: 700px;
+    padding: 2.5em !important;
+    padding-right: 4em !important;
+  }
+  input {
+    padding: 1em 0 1em 1em;
+  }
+}
