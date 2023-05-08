@@ -99,10 +99,12 @@ function App() {
         return 3.0;
       case "C-":
         return 2.5;
-      case "D+":
+      case "D":
         return 2.0;
-      case "D-":
+      case "E":
         return 1.5;
+      case "F":
+        return 1.0;
       default:
         return 0;
     }
@@ -185,8 +187,9 @@ function App() {
                     <option value="B-">B-</option>
                     <option value="C+">C+</option>
                     <option value="C-">C-</option>
-                    <option value="D+">D+</option>
-                    <option value="D-">D-</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
                   </select>
                   <select
                     style={{ width: "200px", paddingLeft: "10px" }}
