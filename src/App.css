@@ -69,7 +69,8 @@ main .wrapper button {
   border-radius: 0.3em;
 }
 main .wrapper button:hover {
-  background-color: #7c7a7a;
+  opacity: 0.7;
+  /* background-color: #7c7a7a; */
 }
 main .wrapper .btn {
   display: -webkit-box;
@@ -90,8 +91,19 @@ main .wrapper .btn {
   font-size: 1em;
   cursor: pointer;
 }
-.addCourse:hover {
+.disabled {
+  height: fit-content;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
   background-color: gray;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1em;
+}
+.addCourse:hover {
+  opacity: 0.7;
+  /* background-color: gray; */
 }
 .course_info {
   margin-bottom: 1em;

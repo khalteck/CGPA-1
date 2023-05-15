@@ -40,9 +40,11 @@ function App() {
   };
 
   const handleRemoveCourse = (semesterIndex, courseIndex) => {
-    const updatedSemesters = [...semesters];
-    updatedSemesters[semesterIndex].courses.splice(courseIndex, 1);
-    setSemesters(updatedSemesters);
+    if (semesters[semesterIndex].courses.length >= 5) {
+      const updatedSemesters = [...semesters];
+      updatedSemesters[semesterIndex].courses.splice(courseIndex, 1);
+      setSemesters(updatedSemesters);
+    }
   };
 
   const handleInputChange = (semesterIndex, courseIndex, field, value) => {
@@ -87,22 +89,14 @@ function App() {
 
   const getPointFromGrade = (grade) => {
     switch (grade) {
-      case "A+":
+      case "A":
         return 5.0;
-      case "A-":
-        return 4.5;
-      case "B+":
+      case "B":
         return 4.0;
-      case "B-":
-        return 3.5;
-      case "C+":
+      case "C":
         return 3.0;
-      case "C-":
-        return 2.5;
       case "D":
         return 2.0;
-      case "E":
-        return 1.5;
       case "F":
         return 1.0;
       default:
@@ -140,16 +134,8 @@ function App() {
               Semester
             </h2>
             <div className="info">
-              <p>NB: min, of 4 courses, max. of 6 courses</p>
+              <p>NB: min, of 4 courses, max. of 12 courses</p>
             </div>
-            {/* <thead>
-                <tr>
-                  <th>Course Title</th>
-                  <th>Grade</th>
-                  <th>Credit</th>
-                  <th>Actions</th>
-                </tr>
-              </thead> */}
             <div>
               {semester.courses.map((course, courseIndex) => (
                 <div key={courseIndex} className="course_info">
@@ -181,14 +167,10 @@ function App() {
                     <option value="grade" hidden>
                       Grade
                     </option>
-                    <option value="A+">A+</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B-">B-</option>
-                    <option value="C+">C+</option>
-                    <option value="C-">C-</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
                     <option value="D">D</option>
-                    <option value="E">E</option>
                     <option value="F">F</option>
                   </select>
                   <select
@@ -234,7 +216,10 @@ function App() {
                 }}
               >
                 <button
-                  className="addCourse"
+                  className={` ${
+                    semester.courses.length >= 12 ? "disabled" : "addCourse"
+                  }`}
+                  disabled={semester.courses.length >= 12}
                   onClick={() => handleAddCourse(semesterIndex)}
                 >
                   Add Course
